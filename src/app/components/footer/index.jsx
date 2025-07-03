@@ -1,42 +1,43 @@
+"use client";
+
+import Input from "../ui/input";
+
 const Footer = () => {
   return (
-    <footer className="bg-[#FFBBCB] text-[#FF5E43] h-[300px] flex flex-col justify-between items-center py-6 px-8 font-poppins">
-      <section className="w-full flex justify-around items-center h-[90%]">
-        <div className="text-5xl font-grandstander pt-4">Ecstasy.</div>
+    <footer className="bg-[#FFBBCB] text-[#FF5E43] pt-10 px-6 font-poppins">
+      <section className="max-w-7xl py-10 mx-auto flex flex-col md:flex-row justify-between items-center gap-8">        
+        {/* Logo */}
+        <div className="text-4xl sm:text-5xl font-grandstander">Ecstasy.</div>
 
-        <div className="flex flex-col">
-          <a>Instagram</a>
-          <a>Pinterest</a>
-          <a>Facebook</a>
+        {/* Social Links */}
+        <div className="flex flex-col gap-1 text-base items-center">
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer">Pinterest</a>
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
         </div>
 
-        <div className="flex flex-col">
-          <a>Search</a>
-          <a>Home</a>
-          <a>About</a>
-          <a>FAQs</a>
-          <a>Contact Us</a>
+        {/* Nav Links */}
+        <div className="flex flex-col gap-1 text-base items-center">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact Us</a>
         </div>
 
-        <form className="grid grid-cols-2 gap-2 pt-8">
-          <input
-            type="text"
-            placeholder="First Name"
-            className="w-[130px] h-[25px] border border-[#FF5E43] outline-none font-poppins px-2"
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-[130px] h-[25px] border border-[#FF5E43] outline-none font-poppins px-2"
-          />
+        {/* Newsletter */}
+        <form className="w-full sm:max-w-[290px] flex flex-col gap-3 mt-4 sm:mt-0">
+          <Input type="email" placeholder="Enter your email" />
           <input
             type="submit"
-            value="Sign Up!"
-            className="col-span-2 bg-transparent text-white text-[1.1em] cursor-pointer border-none"
+            value="Subscribe"
+            className="bg-[#FF5E43] text-white font-medium py-2 px-4 rounded-md cursor-pointer hover:bg-[#e24a34] transition"
           />
         </form>
       </section>
-      <div className="text-sm font-light text-center">Copyright 2023 | Ecstasy</div>
+
+      {/* Footer Bottom */}
+      <div className="text-sm font-light text-center mt-6">
+        © {new Date().getFullYear()} | Ecstasy
+      </div>
     </footer>
   );
 };

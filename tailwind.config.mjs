@@ -3,16 +3,17 @@
 //   content: [
 //     "./app/**/*.{js,ts,jsx,tsx}",
 //     "./components/**/*.{js,ts,jsx,tsx}",
+//     "./pages/**/*.{js,ts,jsx,tsx}",
 //   ],
 //   theme: {
 //     extend: {
 //       colors: {
-//         background: "var(--background)",
-//         foreground: "var(--foreground)",
+//         cream: "#F9F4EF",
+//         pinkLight: "#FFBBCB",
+//         purpleLight: "#DFBACD",
+//         coral: "#FF5E43",
 //       },
 //       fontFamily: {
-//         sans: "var(--font-sans)",
-//         mono: "var(--font-mono)",
 //         poppins: "var(--font-poppins)",
 //         orelega: "var(--font-orelega)",
 //         grandstander: "var(--font-grandstander)",
@@ -20,4 +21,4 @@
 //     },
 //   },
 //   plugins: [],
-// }
+// };

@@ -2,7 +2,7 @@
 
 const ProductCard = ({ name, Img, price }) => {
   return (
-    <div className="w-[270px] h-[300px] flex flex-col font-Poppins relative cursor-pointer group border-2 border-black">
+    <div className="w-[270px] h-[300px] min-w-[270px] flex flex-col font-Poppins relative cursor-pointer group border-2 border-black">
       {/* Image with overlay */}
       <div
         className="h-[250px] w-full bg-cover bg-center flex items-center justify-center text-transparent font-semibold text-lg relative group-hover:text-white transition-all duration-200"
