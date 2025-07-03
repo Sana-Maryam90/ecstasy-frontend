@@ -3,7 +3,7 @@ const Input = ({ type = "text", placeholder, className = "", ...props }) => {
     <input
       type={type}
       placeholder={placeholder}
-      className={`w-full border border-[#FF5E43] bg-transparent text-[#FF5E43] placeholder-[#FF5E43] font-poppins px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF5E43] transition ${className}`}
+      className={`w-full border border-orange bg-transparent text-orange placeholder-orange font-poppins px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-orange transition ${className}`}
       {...props}
     />
   );

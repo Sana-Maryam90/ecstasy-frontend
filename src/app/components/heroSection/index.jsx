@@ -2,12 +2,14 @@
 
 import Image from "next/image";
 import Button from "../ui/button";
+import Navbar from "../navbar";
 
 const HeroSection = () => {
   return (
-    <main className="relative flex h-screen bg-[#F9F4EF] overflow-hidden">
-      {/* Floating SVGs – responsive & optimized */}
-      <div className="absolute top-[300px] left-[1%] w-10 h-10 animate-pulse z-10">
+    <main className="relative flex flex-col-reverse lg:flex-row min-h-[90vh] lg:h-screen bg-[#F9F4EF] overflow-hidden">
+      {/* Floating SVGs */}
+      <Navbar />
+      <div className="absolute top-[70%] left-[2%] w-8 h-8 lg:w-10 lg:h-10 animate-pulse z-10">
         <Image
           src="/assets/images/svgs/pinkflower.svg"
           alt="Pink Flower"
@@ -15,7 +17,7 @@ const HeroSection = () => {
           className="object-contain"
         />
       </div>
-      <div className="absolute top-[100px] right-[5%] w-10 h-10 animate-bounce z-10">
+      <div className="absolute top-[10%] right-[6%] w-8 h-8 lg:w-10 lg:h-10 animate-bounce z-10">
         <Image
           src="/assets/images/svgs/purpleflow.svg"
           alt="Purple Flow"
@@ -23,7 +25,7 @@ const HeroSection = () => {
           className="object-contain"
         />
       </div>
-      <div className="absolute bottom-[120px] right-[28%] w-10 h-10 animate-ping z-10">
+      <div className="absolute bottom-[15%] right-[35%] w-8 h-8 lg:w-10 lg:h-10 animate-ping z-10">
         <Image
           src="/assets/images/svgs/yellowplus.svg"
           alt="Yellow Plus"
@@ -33,24 +35,24 @@ const HeroSection = () => {
       </div>
 
       {/* Left Text Section */}
-      <div className="w-1/2 flex flex-col justify-center px-10 font-orelega text-5xl">
+      <div className="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start text-center lg:text-left px-6 sm:px-10 py-10 font-orelega text-3xl sm:text-4xl lg:text-5xl">
         <p>
           Where your{" "}
-          <span className="bg-[url('/assets/images/svgs/blue.svg')] bg-cover bg-center">
+          <span className="bg-[url('/assets/images/svgs/blue.svg')] bg-cover bg-center px-2">
             paper
           </span>{" "}
           dreams find their spark.
         </p>
-        <div className="mt-6 ml-[5%]">
+        <div className="mt-6">
           <Button
             txt="Explore"
-            className="w-[180px] h-[50px] rounded-[50px] text-l"
+            className="w-[160px] sm:w-[180px] h-[45px] sm:h-[50px] rounded-full text-base sm:text-lg lg:text-xl"
           />
         </div>
       </div>
 
       {/* Right Notebook Image */}
-      <div className="flex-1 relative h-full">
+      <div className="w-full lg:w-1/2 relative min-h-[300px] lg:h-full">
         <Image
           src="/assets/images/JPEGs/notebook.jpg"
           alt="Notebook Hero"

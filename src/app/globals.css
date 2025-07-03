@@ -3,11 +3,20 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --cream: #F9F4EF;
+  --pinkLight: #FFBBCB;
+  --purpleLight: #DFBACD;
+  --orange: #FF5E43;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-cream: var(--cream);
+  --color-pinkLight: var(--pinkLight);
+  --color-purpleLight: var(--purpleLight);
+  --color-orange: var(--orange);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-poppins: var(--font-poppins);

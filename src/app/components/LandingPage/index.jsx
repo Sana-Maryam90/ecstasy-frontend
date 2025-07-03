@@ -39,7 +39,7 @@ const LandingPage = () => {
 
       {/* Popular Section */}
       <section className="py-10 sm:py-12">
-        <p className="text-2xl sm:text-3xl lg:text-4xl font-orelega text-center mb-8 px-4">
+        <p className="text-2xl sm:text-3xl lg:text-4xl font-orelega text-center mb-4">
           <span className="bg-[url('/assets/images/svgs/sparkle.svg')] bg-cover bg-center px-8 py-6 inline-block">
             Popular
           </span>

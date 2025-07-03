@@ -4,7 +4,7 @@ import Input from "../ui/input";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#FFBBCB] text-[#FF5E43] pt-10 px-6 font-poppins">
+    <footer className="bg-pinkLight text-orange pt-10 px-6 font-poppins">
       <section className="max-w-7xl py-10 mx-auto flex flex-col md:flex-row justify-between items-center gap-8">        
         {/* Logo */}
         <div className="text-4xl sm:text-5xl font-grandstander">Ecstasy.</div>
@@ -29,7 +29,7 @@ const Footer = () => {
           <input
             type="submit"
             value="Subscribe"
-            className="bg-[#FF5E43] text-white font-medium py-2 px-4 rounded-md cursor-pointer hover:bg-[#e24a34] transition"
+            className="bg-orange text-white font-medium py-2 px-4 rounded-md cursor-pointer hover:bg-[#e24a34] transition"
           />
         </form>
       </section>
