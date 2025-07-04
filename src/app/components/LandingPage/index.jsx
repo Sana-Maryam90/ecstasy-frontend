@@ -9,7 +9,7 @@ const LandingPage = () => {
       <section className="w-full text-center py-10 sm:py-12">
         <p className="text-2xl sm:text-3xl lg:text-4xl font-orelega px-4 sm:px-8 md:px-20">
           Variety of{" "}
-          <span className="relative inline-block bg-[url('/assets/images/JPEGs/circle.svg')] bg-cover bg-center px-1">
+          <span className="relative inline-block bg-[url('/assets/images/svgs/circle.svg')] bg-cover bg-center px-1">
             exciting
           </span>{" "}
           products to choose from.

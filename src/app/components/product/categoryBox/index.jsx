@@ -15,7 +15,7 @@ const CategoryBox = ({ Img, txt, link, shadowColor }) => {
         {txt}
       </p>
       <div className="absolute bottom-5 w-full hidden group-hover:flex justify-center">
-        <Link href={link}>
+        <Link href={`/products/${link}`}>
           <Button
             txt="Browse"
             className="w-[160px] h-[40px] text-[1.1em] rounded-[20px]"
