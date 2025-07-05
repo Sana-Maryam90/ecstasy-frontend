@@ -32,45 +32,58 @@ const sampleProducts = [
     Img: "/assets/images/JPEGs/diary.jpg",
     price: "220",
   },
+    {
+    id: 5,
+    name: "Daily Diary",
+    Img: "/assets/images/JPEGs/diary.jpg",
+    price: "220",
+  },
+    {
+    id: 6,
+    name: "Daily Diary",
+    Img: "/assets/images/JPEGs/diary.jpg",
+    price: "220",
+  },
 ];
 
 const ProductList = () => {
   const params = useParams();
-  const category = params?.category || "products";
+  const category = params?.slug || "products";
 
+  const [randomColorClass, setRandomColorClass] = useState("");
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     setProducts(sampleProducts);
+    const random = colorClasses[Math.floor(Math.random() * colorClasses.length)];
+    setRandomColorClass(random);
   }, [category]);
+
+
+    const colorClasses = [
+    "text-orange",
+    "text-secondaryGreen",
+    "text-secondaryPink",
+    "text-purpleLight",
+  ];
 
   return (
     <>
       <Navbar />
 
-      <main className="bg-[#F9F4EF] min-h-screen font-poppins px-4 sm:px-10 lg:px-24 py-16 relative overflow-hidden">
-
-        {/* Sparkle SVG Decoration */}
-        <div className="absolute top-20 left-10 opacity-20 z-0">
-          <img
-            src="/assets/images/svgs/sparkle.svg"
-            alt="sparkle"
-            className="w-28 h-28 rotate-[15deg]"
-          />
-        </div>
-
+      <main className="bg-[#F9F4EF] min-h-screen font-poppins px-4 sm:px-10 lg:px-24 py-32 relative overflow-hidden">
         {/* Breadcrumb */}
-        <div className="text-[#FF5E43] text-sm mb-6 relative z-10">
+        {/* <div className="text-[#FF5E43] text-sm mb-6 relative z-10">
           <Link href="/" className="hover:underline">Home</Link> &gt;{" "}
           <Link href="/products" className="hover:underline">Products</Link> &gt;{" "}
           <span className="capitalize">{category}</span>
-        </div>
+        </div> */}
 
         {/* Section Title */}
-        <h1 className="text-4xl sm:text-5xl font-orelega text-center mb-4 relative z-10">
-          <span className="bg-[url('/assets/images/svgs/sparkle.svg')] bg-cover bg-center px-6 py-4 inline-block">
-            {category?.toUpperCase()}
-          </span>{" "}
+        <h1 className="text-4xl sm:text-5xl font-orelega text-center mb-4 pt-10 relative z-10">
+          <span className={`${randomColorClass} capitalize px-6 py-4 inline-block`}>
+            {category}
+          </span>
           Collection
         </h1>
 
@@ -103,7 +116,7 @@ const ProductList = () => {
         </div>
 
         {/* Decorative bottom element */}
-        <div className="absolute bottom-0 right-0 opacity-10 z-0">
+        <div className="absolute bottom-0 right-0 opacity-30 z-0">
           <img
             src="/assets/images/svgs/purpleflow.svg"
             alt="decor"

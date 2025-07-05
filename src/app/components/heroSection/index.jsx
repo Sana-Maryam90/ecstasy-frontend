@@ -46,7 +46,7 @@ const HeroSection = () => {
         <div className="mt-6">
           <Button
             txt="Explore"
-            className="w-[160px] sm:w-[180px] h-[45px] sm:h-[50px] rounded-full text-base sm:text-lg lg:text-xl"
+            className="w-[160px] sm:w-[180px] h-[45px] sm:h-[50px] text-base sm:text-lg lg:text-xl"
           />
         </div>
       </div>

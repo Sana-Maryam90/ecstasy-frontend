@@ -18,7 +18,7 @@ const CategoryBox = ({ Img, txt, link, shadowColor }) => {
         <Link href={`/products/${link}`}>
           <Button
             txt="Browse"
-            className="w-[160px] h-[40px] text-[1.1em] rounded-[20px]"
+            className="w-[160px] h-[40px] text-[1.1em]"
           />
         </Link>
       </div>

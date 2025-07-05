@@ -7,6 +7,8 @@
   --pinkLight: #FFBBCB;
   --purpleLight: #DFBACD;
   --orange: #FF5E43;
+  --secondaryGreen: #A6D1BD;
+  --secondaryPink: #EE8794;
 }
 
 @theme inline {
@@ -16,6 +18,9 @@
   --color-pinkLight: var(--pinkLight);
   --color-purpleLight: var(--purpleLight);
   --color-orange: var(--orange);
+  --color-secondaryGreen: var(--secondaryGreen);
+  --color-secondaryPink: var(--secondaryPink);
+
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
