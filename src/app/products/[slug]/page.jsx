@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import Navbar from "@/app/components/navbar";
 import Footer from "@/app/components/footer";
 import ProductCard from "@/app/components/product/productCard";
+import { getProductsByCategory } from "@/app/api/productAPIs";
 import Link from "next/link";
 
 const sampleProducts = [
@@ -35,13 +36,13 @@ const sampleProducts = [
     {
     id: 5,
     name: "Daily Diary",
-    Img: "/assets/images/JPEGs/diary.jpg",
+    Img: "/assets/images/JPEGs/notebook.jpg",
     price: "220",
   },
     {
     id: 6,
     name: "Daily Diary",
-    Img: "/assets/images/JPEGs/diary.jpg",
+    Img: "/assets/images/JPEGs/notepad.jpg",
     price: "220",
   },
 ];
@@ -53,8 +54,22 @@ const ProductList = () => {
   const [randomColorClass, setRandomColorClass] = useState("");
   const [products, setProducts] = useState([]);
 
+  // useEffect(() => {
+  //   setProducts(sampleProducts);
+  //   const random = colorClasses[Math.floor(Math.random() * colorClasses.length)];
+  //   setRandomColorClass(random);
+  // }, [category]);
+
   useEffect(() => {
-    setProducts(sampleProducts);
+    async function load() {
+      try {
+        const data = await getProductsByCategory(category);
+        setProducts(data);
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    load();
     const random = colorClasses[Math.floor(Math.random() * colorClasses.length)];
     setRandomColorClass(random);
   }, [category]);
@@ -106,11 +121,19 @@ const ProductList = () => {
         {/* Product Grid */}
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center relative z-10">
           {products.map((product) => (
+            // <ProductCard
+            //   key={product.id}
+            //   Img={product.Img}
+            //   name={product.name}
+            //   price={product.price}
+            // />
             <ProductCard
               key={product.id}
-              Img={product.Img}
+              Img={`http://localhost:8000${product.image}`}
               name={product.name}
               price={product.price}
+              id={product.id}
+              slug={category}
             />
           ))}
         </div>

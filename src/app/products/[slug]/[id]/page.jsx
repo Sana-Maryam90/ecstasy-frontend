@@ -4,6 +4,10 @@ import Navbar from "@/app/components/navbar";
 import Footer from "@/app/components/footer";
 import Button from "@/app/components/ui/button";
 import ProductCard from "@/app/components/product/productCard";
+import { getProductById } from "@/app/api/productAPIs";
+import { useParams } from "next/navigation";
+import { useState, useEffect } from "react";
+
 
 const product = {
   name: "Floral Notebook",
@@ -32,7 +36,7 @@ const recommendedProducts = [
   {
     id: 2,
     name: "Casetta A6 Pocket Notebook",
-    Img: "/assets/images/JPEGs/sketchbook.jpg",
+    Img: "/assets/images/JPEGs/sketch.jpg",
     price: "220",
   },
   {
@@ -44,13 +48,13 @@ const recommendedProducts = [
   {
     id: 4,
     name: "Rise A6 Pocket Notebook",
-    Img: "/assets/images/JPEGs/sketchbook.jpg",
+    Img: "/assets/images/JPEGs/beigenotebook.jpg",
     price: "200",
   },
   {
     id: 5,
     name: "Sunset A6 Pocket Notebook",
-    Img: "/assets/images/JPEGs/sketchbook.jpg",
+    Img: "/assets/images/JPEGs/graybook.jpg",
     price: "215",
   },
 ];
@@ -58,6 +62,24 @@ const recommendedProducts = [
 
 
 export default function ProductDetails() {
+
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
+
+  useEffect(() => {
+    async function loadProduct() {
+      try {
+        const data = await getProductById(id);
+        setProduct(data);
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    loadProduct();
+  }, [id]);
+
+  if (!product) return <div>Loading...</div>;
+
   return (
     <>
       <Navbar />
@@ -80,9 +102,9 @@ export default function ProductDetails() {
           <div className="border-b border-black-300 py-6">
             <h4 className="font-semibold mb-2 text-sm">Measurements</h4>
             <ul className="text-sm space-y-1">
-              <li>Width: {product.dimensions.width}</li>
-              <li>Height: {product.dimensions.height}</li>
-              <li>Depth: {product.dimensions.depth}</li>
+              <li>Width: {product.dimensions?.width || "N/A"}</li>
+              <li>Height: {product.dimensions?.height || "N/A"}</li>
+              <li>Depth: {product.dimensions?.depth || "N/A"}</li>
             </ul>
           </div>
 
@@ -102,7 +124,7 @@ export default function ProductDetails() {
         {/* RIGHT BLOCK */}
         <div className="border-b border-r border-black-300 p-6 flex items-center justify-center">
           <img
-            src={product.image}
+            src={`http://localhost:8000${product.image}`}
             alt={product.name}
             className="w-full max-h-[500px] object-contain"
           />
