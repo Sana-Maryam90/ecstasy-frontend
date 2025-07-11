@@ -9,32 +9,40 @@ const LandingPage = () => {
       <section className="w-full text-center py-10 sm:py-12">
         <p className="text-2xl sm:text-3xl lg:text-4xl font-orelega px-4 sm:px-8 md:px-20">
           Variety of{" "}
-          <span className="relative inline-block bg-[url('/assets/images/svgs/circle.svg')] bg-cover bg-center px-1">
+          <span className="relative inline-block bg-[url('/assets/images/svgs/circle.svg')] bg-cover bg-center py-1 px-1">
             exciting
           </span>{" "}
           products to choose from.
         </p>
 
-        <div className="flex flex-wrap gap-6 justify-center sm:justify-around max-w-6xl mx-auto mt-10 px-4">
-          <CategoryBox
-            link="/notebooks"
-            Img="/assets/images/JPEGs/notebooks.jpg"
-            txt="Notebooks"
-            shadowColor="#A6D1BD"
-          />
-          <CategoryBox
-            link="/notepads"
-            Img="/assets/images/JPEGs/notepad.jpg"
-            txt="Notepads"
-            shadowColor="#DFBACD"
-          />
-          <CategoryBox
-            link="/sketchbooks"
-            Img="/assets/images/JPEGs/sketch.jpg"
-            txt="Sketchbooks"
-            shadowColor="#EE8794"
-          />
+       
+        <div className="flex flex-wrap gap-6 justify-center sm:justify-around max-w-5xl mx-auto mt-16 px-4">
+          <div className="sm:mt-8">
+            <CategoryBox
+              link="/notebooks"
+              Img="/assets/images/JPEGs/notebooks.jpg"
+              txt="Notebooks"
+              shadowColor="#A6D1BD"
+            />
+          </div>
+          <div className="sm:-mt-8"> {/* Raise the middle one slightly */}
+            <CategoryBox
+              link="/notepads"
+              Img="/assets/images/JPEGs/notepad.jpg"
+              txt="Notepads"
+              shadowColor="#DFBACD"
+            />
+          </div>
+          <div className="sm:mt-8">
+            <CategoryBox
+              link="/sketchbooks"
+              Img="/assets/images/JPEGs/sketch.jpg"
+              txt="Sketchbooks"
+              shadowColor="#EE8794"
+            />
+          </div>
         </div>
+
       </section>
 
       {/* Popular Section */}
@@ -50,9 +58,9 @@ const LandingPage = () => {
           <ProductCard Img="/assets/images/JPEGs/sketchbook.jpg" name="Hardpaper Sketchbook" price="300" />
           <ProductCard Img="/assets/images/JPEGs/graybook.jpg" name="Foil Notebook" price="250" />
           <ProductCard Img="/assets/images/JPEGs/diary.jpg" name="Daily Diary" price="220" />
-          <ProductCard Img="/assets/images/JPEGs/diary.jpg" name="Daily Diary" price="220" />
-          <ProductCard Img="/assets/images/JPEGs/diary.jpg" name="Daily Diary" price="220" />
-          <ProductCard Img="/assets/images/JPEGs/diary.jpg" name="Daily Diary" price="220" />
+          <ProductCard Img="/assets/images/JPEGs/sketch.jpg" name="Daily Diary" price="220" />
+          <ProductCard Img="/assets/images/JPEGs/notebook.jpg" name="Daily Diary" price="220" />
+          <ProductCard Img="/assets/images/JPEGs/sketchbook.jpg" name="Daily Diary" price="220" />
           <ProductCard Img="/assets/images/JPEGs/diary.jpg" name="Daily Diary" price="220" />
         </HorizontalScroll>
       </section>

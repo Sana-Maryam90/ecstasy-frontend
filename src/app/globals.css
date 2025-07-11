@@ -42,3 +42,55 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.scrollbar-hidden {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+
+@keyframes floatSoft {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes rotateSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dwindle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(40deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-float-soft {
+  animation: floatSoft 3s ease-in-out infinite;
+}
+
+.animate-rotate-slow {
+  animation: rotateSlow 20s linear infinite;
+}
+
+.animate-dwindle {
+  animation: dwindle 3s linear infinite;
+}

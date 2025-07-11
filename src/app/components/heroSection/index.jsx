@@ -9,7 +9,7 @@ const HeroSection = () => {
     <main className="relative flex flex-col-reverse lg:flex-row min-h-[90vh] lg:h-screen bg-[#F9F4EF] overflow-hidden">
       {/* Floating SVGs */}
       <Navbar />
-      <div className="absolute top-[70%] left-[2%] w-8 h-8 lg:w-10 lg:h-10 animate-pulse z-10">
+      {/* <div className="absolute top-[70%] left-[2%] w-8 h-8 lg:w-10 lg:h-10 animate-pulse z-10">
         <Image
           src="/assets/images/svgs/pinkflower.svg"
           alt="Pink Flower"
@@ -32,7 +32,7 @@ const HeroSection = () => {
           fill
           className="object-contain"
         />
-      </div>
+      </div> */}
 
       {/* Left Text Section */}
       <div className="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start text-center lg:text-left px-6 sm:px-10 py-10 font-orelega text-3xl sm:text-4xl lg:text-5xl">

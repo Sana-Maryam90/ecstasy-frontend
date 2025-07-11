@@ -88,7 +88,7 @@ export default function ProductDetails() {
         <div className="flex flex-col justify-between border-b border-r border-black-300 p-6">
           {/* Brand and Price */}
           <div className="flex justify-between border-b border-black-300 pb-6">
-            <h2 className="text-4xl font-bold font-orelega">{product.name}</h2>
+            <h2 className="text-4xl font-orelega">{product.name}</h2>
             <p className="text-2xl font-semibold">PKR {product.price}</p>
           </div>
 
@@ -102,9 +102,9 @@ export default function ProductDetails() {
           <div className="border-b border-black-300 py-6">
             <h4 className="font-semibold mb-2 text-sm">Measurements</h4>
             <ul className="text-sm space-y-1">
-              <li>Width: {product.dimensions?.width || "N/A"}</li>
-              <li>Height: {product.dimensions?.height || "N/A"}</li>
-              <li>Depth: {product.dimensions?.depth || "N/A"}</li>
+              <li>Width: {product.dimensions?.width || "20cm"}</li>
+              <li>Height: {product.dimensions?.height || "55cm"}</li>
+              <li>Depth: {product.dimensions?.depth || "10cm"}</li>
             </ul>
           </div>
 
@@ -117,7 +117,7 @@ export default function ProductDetails() {
           {/* Arrival & Website */}
           <div className="flex justify-between text-sm pt-6">
             <span className="text-gray-500">www.ecstasy.com</span>
-            <span>Arrival: {product.arrival}</span>
+            <span>Arrival: {product?.arrival || "20-Aug-2025"}</span>
           </div>
         </div>
 
@@ -132,36 +132,41 @@ export default function ProductDetails() {
       </main>
 
 
-<section className="bg-cream pb-20 font-poppins">
-  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[minmax(300px, auto)]">
-      
-      {/* Text Card */}
-      <div className="col-span-1 sm:col-span-2 lg:col-span-3 bg-secondaryGreen border border-black rounded-xl shadow-[4px_4px_0_black] p-6 flex flex-col justify-between relative overflow-hidden">
-        <div>
-          <h3 className="text-2xl font-bold mb-2">You may also like</h3>
-          <p className="text-sm text-gray-700 max-w-[500px]">
-            Handpicked notebooks to match your unique style and creative spirit. Discover fresh picks made for dreamers and doers.
-          </p>
-        </div>
-        <Button txt={"Explore"} className="w-[100px] h-[35px]"/>
-      </div>
-
-      {/* Product Cards */}
-      {recommendedProducts.map((product) => (
-        <div key={product.id} className="col-span-1 flex justify-center">
-          <ProductCard
-            name={product.name}
-            Img={product.Img}
-            price={product.price}
+        <section className="bg-cream pb-20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[minmax(300px, auto)]">
+              
+              {/* Text Card */}
+              <div className="col-span-1 sm:col-span-2 lg:col-span-3 p-6 flex flex-col justify-between relative overflow-hidden">
+                <div>
+                  <h3 className="text-4xl font-bold font-orelega mb-2">You may also like</h3>
+                  <p className="text-sm font-poppins text-gray-700 max-w-[500px]">
+                    Handpicked notebooks to match your unique style and creative spirit. Discover fresh picks made for dreamers and doers.
+                  </p>
+                          <div className="absolute bottom-0 right-0 opacity-30 z-0">
+          <img
+            src="/assets/images/svgs/purpleflow.svg"
+            alt="decor"
+            className="w-44 h-44"
           />
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+                </div>
+                {/* <Button txt={"Explore"} className="w-[100px] h-[35px]"/> */}
+              </div>
 
-
+              {/* Product Cards */}
+              {recommendedProducts.map((product) => (
+                <div key={product.id} className="col-span-1 flex justify-center">
+                  <ProductCard
+                    name={product.name}
+                    Img={product.Img}
+                    price={product.price}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       <Footer />
     </>
   );

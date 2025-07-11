@@ -1,11 +1,18 @@
 import LandingPage from "./components/LandingPage";
 import Footer from "./components/footer";
 import HeroSection from "./components/heroSection";
-import Navbar from "./components/navbar";
+import Decorations from "./components/ui/decoration";
+import Image from "next/image";
 
 const Home = () => {
   return (
-    <main>
+    // <main>
+    //   <HeroSection />
+    //   <LandingPage />
+    //   <Footer />
+    // </main>
+     <main className="relative bg-[#F9F4EF] overflow-x-hidden">
+      <Decorations />
       <HeroSection />
       <LandingPage />
       <Footer />

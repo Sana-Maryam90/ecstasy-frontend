@@ -29,13 +29,13 @@ const Navbar = () => {
                 </>
             }
           >
-            <Link href="/products" className="block px-4 py-2 hover:bg-gray-100">
+            <Link href="/products/notebooks" className="block px-4 py-2 hover:bg-gray-100">
                 Notebooks
             </Link>
-            <Link href="/products" className="block px-4 py-2 hover:bg-gray-100">
+            <Link href="/products/notepads" className="block px-4 py-2 hover:bg-gray-100">
                 Notepads
             </Link>
-            <Link href="/products" className="block px-4 py-2 hover:bg-gray-100">
+            <Link href="/products/sketchbooks" className="block px-4 py-2 hover:bg-gray-100">
                 Sketchbooks
             </Link>
           </Dropdown>
