@@ -1,15 +1,17 @@
 "use client";
-
 import Link from "next/link";
 
-const ProductCard = ({ name, Img, price, slug, id }) => {
+const ProductCard = ({ product }) => {
+  if (!product) return null;
+  const { name, image, price, slug, id } = product;
+
   return (
     <Link href={`/products/${slug}/${id}`} className="w-[270px] h-[300px] min-w-[270px]">
       <div className="w-full h-full flex flex-col font-Poppins relative cursor-pointer group border-2 border-black">
         {/* Image with overlay */}
         <div
           className="h-[250px] w-full bg-cover bg-center flex items-center justify-center text-transparent font-semibold text-lg relative group-hover:text-white transition-all duration-200"
-          style={{ backgroundImage: `url(${Img})` }}
+          style={{ backgroundImage: `url(http://localhost:8000${image})` }}
         >
           <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-t-sm" />
           <span className="z-10">{name}</span>

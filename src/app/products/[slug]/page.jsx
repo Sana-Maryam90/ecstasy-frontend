@@ -121,20 +121,14 @@ const ProductList = () => {
         {/* Product Grid */}
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-center relative z-10">
           {products.map((product) => (
-            // <ProductCard
-            //   key={product.id}
-            //   Img={product.Img}
-            //   name={product.name}
-            //   price={product.price}
-            // />
             <ProductCard
               key={product.id}
-              Img={`http://localhost:8000${product.image}`}
-              name={product.name}
-              price={product.price}
-              id={product.id}
-              slug={category}
+              product={{
+                ...product,
+                slug: category,
+              }}
             />
+
           ))}
         </div>
 

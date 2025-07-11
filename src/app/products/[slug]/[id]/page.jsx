@@ -7,6 +7,8 @@ import ProductCard from "@/app/components/product/productCard";
 import { getProductById } from "@/app/api/productAPIs";
 import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
+import { useCart } from "@/app/hooks/cartContext";
+
 
 
 const product = {
@@ -30,31 +32,31 @@ const recommendedProducts = [
   {
     id: 1,
     name: "Beams A6 Pocket Notebook",
-    Img: "/assets/images/JPEGs/sketchbook.jpg",
+    image: "/assets/images/JPEGs/sketchbook.jpg",
     price: "210",
   },
   {
     id: 2,
     name: "Casetta A6 Pocket Notebook",
-    Img: "/assets/images/JPEGs/sketch.jpg",
+    image: "/assets/images/JPEGs/sketch.jpg",
     price: "220",
   },
   {
     id: 3,
     name: "Groove A6 Pocket Notebook",
-    Img: "/assets/images/JPEGs/sketchbook.jpg",
+    image: "/assets/images/JPEGs/sketchbook.jpg",
     price: "230",
   },
   {
     id: 4,
     name: "Rise A6 Pocket Notebook",
-    Img: "/assets/images/JPEGs/beigenotebook.jpg",
+    image: "/assets/images/JPEGs/beigenotebook.jpg",
     price: "200",
   },
   {
     id: 5,
     name: "Sunset A6 Pocket Notebook",
-    Img: "/assets/images/JPEGs/graybook.jpg",
+    image: "/assets/images/JPEGs/graybook.jpg",
     price: "215",
   },
 ];
@@ -62,6 +64,8 @@ const recommendedProducts = [
 
 
 export default function ProductDetails() {
+
+  const { addToCart } = useCart();
 
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -111,7 +115,7 @@ export default function ProductDetails() {
          {/* Buy Button Section */}
           <div className="border-b border-black-300 py-6">
             <h4 className="font-semibold mb-2 text-sm">Ready to order?</h4>
-            <Button txt={"Buy Now"} className="w-[100px] h-[35px]"/>
+            <Button txt={"Buy Now"} onClick={() => addToCart(product)} className="w-[100px] h-[35px]"/>
           </div>
 
           {/* Arrival & Website */}
@@ -158,9 +162,7 @@ export default function ProductDetails() {
               {recommendedProducts.map((product) => (
                 <div key={product.id} className="col-span-1 flex justify-center">
                   <ProductCard
-                    name={product.name}
-                    Img={product.Img}
-                    price={product.price}
+                    product={product}
                   />
                 </div>
               ))}

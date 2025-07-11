@@ -1,5 +1,6 @@
 import { Poppins, Orelega_One, Grandstander } from "next/font/google";
 import "./globals.css";
+import { CartProvider } from "./hooks/cartContext";
 
 
 // Define fonts with variables
@@ -29,7 +30,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${orelega.variable} ${grandstander.variable} antialiased`}>{children}</body>
+      <body className={`${poppins.variable} ${orelega.variable} ${grandstander.variable} antialiased`}>
+        <CartProvider>
+            {children}
+        </CartProvider>
+        {/* {children} */}
+      </body>
     </html>
   );
 }
