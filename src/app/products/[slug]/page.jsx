@@ -125,9 +125,10 @@ const ProductList = () => {
               key={product.id}
               product={{
                 ...product,
+                image: `http://localhost:8000${product.image}`,
                 slug: category,
               }}
-            />
+            /> 
 
           ))}
         </div>

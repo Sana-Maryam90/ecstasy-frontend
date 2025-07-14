@@ -11,7 +11,7 @@ const ProductCard = ({ product }) => {
         {/* Image with overlay */}
         <div
           className="h-[250px] w-full bg-cover bg-center flex items-center justify-center text-transparent font-semibold text-lg relative group-hover:text-white transition-all duration-200"
-          style={{ backgroundImage: `url(http://localhost:8000${image})` }}
+          style={{ backgroundImage: `url(${image})` }}
         >
           <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-t-sm" />
           <span className="z-10">{name}</span>

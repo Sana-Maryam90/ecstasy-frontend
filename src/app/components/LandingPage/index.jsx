@@ -54,14 +54,14 @@ const LandingPage = () => {
         </p>
 
         <HorizontalScroll>
-          <ProductCard Img="/assets/images/JPEGs/beigenotebook.jpg" name="Floral Notebook" price="200" />
-          <ProductCard Img="/assets/images/JPEGs/sketchbook.jpg" name="Hardpaper Sketchbook" price="300" />
-          <ProductCard Img="/assets/images/JPEGs/graybook.jpg" name="Foil Notebook" price="250" />
-          <ProductCard Img="/assets/images/JPEGs/diary.jpg" name="Daily Diary" price="220" />
-          <ProductCard Img="/assets/images/JPEGs/sketch.jpg" name="Daily Diary" price="220" />
-          <ProductCard Img="/assets/images/JPEGs/notebook.jpg" name="Daily Diary" price="220" />
-          <ProductCard Img="/assets/images/JPEGs/sketchbook.jpg" name="Daily Diary" price="220" />
-          <ProductCard Img="/assets/images/JPEGs/diary.jpg" name="Daily Diary" price="220" />
+          <ProductCard product={{image: "/assets/images/JPEGs/beigenotebook.jpg", name:"Floral Notebook", price: "200" }}/>
+          <ProductCard product={{image: "/assets/images/JPEGs/sketchbook.jpg",  name:"Hardpaper Sketchbook" , price:"300"}} />
+          <ProductCard product={{image: "/assets/images/JPEGs/graybook.jpg",  name:"Foil Notebook" , price:"250" }}/>
+          <ProductCard product={{image: "/assets/images/JPEGs/diary.jpg",  name:"Daily Diary" , price:"220"}} />
+          <ProductCard product={{image: "/assets/images/JPEGs/sketch.jpg",  name:"Daily Diary" , price:"220" }}/>
+          <ProductCard product={{image: "/assets/images/JPEGs/notebook.jpg",  name:"Daily Diary" , price:"220" }}/>
+          <ProductCard product={{image: "/assets/images/JPEGs/sketchbook.jpg",  name:"Daily Diary" , price:"220" }}/>
+          <ProductCard product={{image: "/assets/images/JPEGs/diary.jpg",  name:"Daily Diary" , price:"220" }} />
         </HorizontalScroll>
       </section>
     </main>
