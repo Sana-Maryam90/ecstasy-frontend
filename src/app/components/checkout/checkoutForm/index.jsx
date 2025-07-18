@@ -1,11 +1,35 @@
 "use client";
 import { useForm } from "react-hook-form";
+import { useCart } from "@/app/hooks/cartContext";
+import { placeOrder } from "@/app/api/orderAPIs";
 
 const CheckoutForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const { cartItems, clearCart } = useCart();
 
-  const onSubmit = (data) => {
-    console.log("Form submitted:", data);
+  const onSubmit = async (formData) => {
+    const payload = {
+      full_name: `${formData.firstName} ${formData.lastName}`,
+      email: formData.email,
+      address: `${formData.address}, ${formData.city}, ${formData.postal || ""}`,
+      shipping_method: formData.shipping,
+      phone: formData.phone,
+      items: cartItems.map((item) => ({
+        id: item.id,
+        qty: item.qty,
+        price: item.price,
+      })),
+    };
+
+    try {
+      const data = await placeOrder(payload);
+      console.log("Order placed:", data);
+      clearCart();
+      // router.push("/thank-you");
+    } catch (err) {
+      console.error("Order failed:", err.message);
+      alert("Something went wrong while placing the order.");
+    }
   };
 
   return (
@@ -54,7 +78,7 @@ const CheckoutForm = () => {
       </div>
 
       {/* Submit for now (real button comes from OrderSummary) */}
-      <button type="submit" className="hidden">Submit</button>
+      <button type="submit" >Submit</button>
     </form>
   );
 };
