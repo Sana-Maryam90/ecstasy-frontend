@@ -23,6 +23,20 @@ Built with **Next.js** for the frontend and **Django** for the backend.
 
 ---
 
+## Screenshots
+
+### 🏠 Home Page
+![Home Page](./images/homepage.png)
+
+### 📦 Product Listing Page
+![Product Listing Page](./images/product-listing.png)
+
+### 📄 Product Details Page
+![Product Details Page](./images/product-details.png)
+
+### 🛒 Checkout Page
+![Checkout Page](./images/checkout.png)
+
 ## Getting Started
 
 First, run the development server:
