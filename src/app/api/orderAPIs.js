@@ -1,5 +1,8 @@
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+
+
 export const placeOrder = async (payload) => {
-  const res = await fetch("http://localhost:8000/api/create-order/", {
+  const res = await fetch(`${API_BASE_URL}/api/create-order/`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
