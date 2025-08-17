@@ -125,7 +125,7 @@ const ProductList = () => {
               key={product.id}
               product={{
                 ...product,
-                image: `http://localhost:8000${product.image}`,
+                image: `${process.env.NEXT_PUBLIC_API_URL}${product.image}`,
                 slug: category,
               }}
             /> 
