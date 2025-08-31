@@ -87,7 +87,7 @@ export default function AdminLogin() {
               Welcome to Admin
             </h2>
             <p className="mt-2 text-center text-sm text-gray-600">
-              No admin account found. Let's create your first admin account.
+              No admin account found. Let&apos;s create your first admin account.
             </p>
           </div>
           <div>

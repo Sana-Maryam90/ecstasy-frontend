@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
+import Image from 'next/image';
 
 export default function ProductModal({ product, categories, onClose }) {
   const [formData, setFormData] = useState({
@@ -60,15 +61,15 @@ export default function ProductModal({ product, categories, onClose }) {
       formDataToSend.append('price', formData.price);
       formDataToSend.append('category', formData.category);
       formDataToSend.append('is_active', formData.is_active);
-      
+
       if (formData.image) {
         formDataToSend.append('image', formData.image);
       }
 
-      const url = product 
+      const url = product
         ? `${process.env.NEXT_PUBLIC_API_URL}/api/admin/products/${product.id}/`
         : `${process.env.NEXT_PUBLIC_API_URL}/api/admin/products/`;
-      
+
       const method = product ? 'PUT' : 'POST';
 
       const response = await fetch(url, {
@@ -171,10 +172,12 @@ export default function ProductModal({ product, categories, onClose }) {
               className="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
             />
             {imagePreview && (
-              <img
+              <Image
                 src={imagePreview}
                 alt="Preview"
                 className="mt-2 h-20 w-20 object-cover rounded"
+                width={80}
+                height={80}
               />
             )}
           </div>

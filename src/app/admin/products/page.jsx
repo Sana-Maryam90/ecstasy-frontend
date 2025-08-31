@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Plus, Edit, Trash2, Eye } from 'lucide-react';
+import Image from 'next/image';
 import ProductModal from './ProductModal';
 
 export default function ProductsPage() {
@@ -97,10 +98,12 @@ export default function ProductsPage() {
               <div className="px-4 py-4 flex items-center justify-between">
                 <div className="flex items-center">
                   <div className="flex-shrink-0 h-16 w-16">
-                    <img
+                    <Image
                       className="h-16 w-16 rounded-md object-cover"
                       src={product.image || '/placeholder-image.jpg'}
                       alt={product.name}
+                      width={64}
+                      height={64}
                     />
                   </div>
                   <div className="ml-4">
