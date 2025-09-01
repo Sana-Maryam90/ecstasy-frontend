@@ -10,7 +10,8 @@ import {
   ShoppingCart, 
   LogOut,
   Menu,
-  X
+  X,
+  ExternalLink
 } from 'lucide-react';
 
 export default function AdminLayout({ children }) {
@@ -122,6 +123,19 @@ function SidebarContent({ navigation, pathname, onLogout }) {
               </Link>
             );
           })}
+          
+          {/* Django Admin Link */}
+          <div className="border-t border-gray-200 pt-2 mt-2">
+            <a
+              href={`${process.env.NEXT_PUBLIC_API_URL}/admin/`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+            >
+              <ExternalLink className="mr-3 h-5 w-5" />
+              Django Admin
+            </a>
+          </div>
         </nav>
         <div className="flex-shrink-0 flex border-t border-gray-200 p-4">
           <button
