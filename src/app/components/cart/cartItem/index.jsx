@@ -10,7 +10,7 @@ const CartItem = ({ item }) => {
       <div className="flex items-center gap-4">
         <div className="relative w-16 h-16">
           <Image
-            src={`http://localhost:8000${item.image}`}
+            src={item.image}
             alt={item.name}
             fill
             className="object-cover rounded"

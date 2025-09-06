@@ -128,7 +128,7 @@ export default function ProductDetails() {
         {/* RIGHT BLOCK */}
         <div className="border-b border-r border-black-300 p-6 flex items-center justify-center">
           <img
-            src={`${process.env.NEXT_PUBLIC_API_URL}${product.image}`}
+            src={product.image}
             alt={product.name}
             className="w-full max-h-[500px] object-contain"
           />
