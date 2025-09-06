@@ -20,7 +20,7 @@ const OrderSummary = () => {
           <div key={item.id} className="flex gap-3 items-center">
             <div className="relative w-12 h-12">
               <Image
-                src={`http://localhost:8000${item.image}`}
+                src={item.image}
                 alt={item.name}
                 fill
                 className="rounded object-cover"
